@@ -1,14 +1,14 @@
 {
-  "name": "share-price-platform-e2e",
+  "name": "share-price-backend-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "implicitDependencies": ["share-price-platform"],
+  "implicitDependencies": ["share-price-backend"],
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
       "options": {
-        "jestConfig": "apps/share-price-platform-e2e/jest.config.ts",
+        "jestConfig": "apps/share-price-backend-e2e/jest.config.ts",
         "passWithNoTests": true
       }
     }

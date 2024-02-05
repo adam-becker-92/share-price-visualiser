@@ -1,7 +1,7 @@
 {
-  "name": "share-price-platform",
+  "name": "share-price-backend",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/share-price-platform/src",
+  "sourceRoot": "apps/share-price-backend/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,12 +10,12 @@
       "defaultConfiguration": "production",
       "options": {
         "platform": "node",
-        "outputPath": "dist/apps/share-price-platform",
+        "outputPath": "dist/apps/share-price-backend",
         "format": ["cjs"],
         "bundle": false,
-        "main": "apps/share-price-platform/src/main.ts",
-        "tsConfig": "apps/share-price-platform/tsconfig.app.json",
-        "assets": ["apps/share-price-platform/src/assets"],
+        "main": "apps/share-price-backend/src/main.ts",
+        "tsConfig": "apps/share-price-backend/tsconfig.app.json",
+        "assets": ["apps/share-price-backend/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
@@ -41,20 +41,20 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "share-price-platform:build"
+        "buildTarget": "share-price-backend:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "share-price-platform:build:development"
+          "buildTarget": "share-price-backend:build:development"
         },
         "production": {
-          "buildTarget": "share-price-platform:build:production"
+          "buildTarget": "share-price-backend:build:production"
         }
       }
     },
     "docker-build": {
       "dependsOn": ["build"],
-      "command": "docker build -f apps/share-price-platform/Dockerfile . -t share-price-platform"
+      "command": "docker build -f apps/share-price-backend/Dockerfile . -t share-price-backend"
     }
   },
   "tags": []
