@@ -8,10 +8,6 @@ const app = express();
 
 app.use(routes);
 
-app.get('/', (req, res) => {
-  res.send({ message: 'Hello API' });
-});
-
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
 });
