@@ -1,0 +1,14 @@
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 16px;
+
+  &__text {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  &__sub-title {
+    font-size: 16px;
+    font-weight: 300;
+  }
+}

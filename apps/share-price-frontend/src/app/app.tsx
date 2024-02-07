@@ -3,6 +3,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 import {
   HeaderComponent,
   SideBarComponent,
+  TitleComponent,
 } from '@share-price-platform/components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,8 +15,8 @@ import {
 
 export function App() {
   const menuItems = [
-    { label: 'Shares Table', icon: faTable, slug: '/' },
-    { label: 'Shares Time Series', icon: faLineChart, slug: '/time-series' },
+    { label: 'Shares Table', icon: faTable, path: '/' },
+    { label: 'Shares Time Series', icon: faLineChart, path: '/time-series' },
   ];
 
   return (
@@ -32,8 +33,10 @@ export function App() {
             path="/"
             element={
               <div>
-                This is the generated root route.
-                <Link to="/page-2">Click here for page 2.</Link>
+                <TitleComponent
+                  title="Shares Table"
+                  subTitle="Table that provides a breakdown of metrics for a selection of different shares"
+                />
               </div>
             }
           />
@@ -41,8 +44,10 @@ export function App() {
             path="/time-series"
             element={
               <div>
-                <FontAwesomeIcon icon={faEnvelope} />
-                <Link to="/">Click here to go back to root page.</Link>
+                <TitleComponent
+                  title="Shares Time Series"
+                  subTitle="Breakdown of share perfromance over time"
+                />
               </div>
             }
           />
