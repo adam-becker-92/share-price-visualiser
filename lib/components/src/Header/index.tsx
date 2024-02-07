@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 
 interface IHeaderProps {
-  text: string;
+  text?: string;
 }
 
 export function HeaderComponent({

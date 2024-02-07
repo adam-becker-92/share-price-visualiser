@@ -1,0 +1,37 @@
+.sidebar {
+  background-color: #e1dcdc;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 16px;
+  width: 250px;
+
+  a {
+    text-decoration: none;
+    padding: 16px 0;
+
+    &:visited {
+      color: #484650;
+    }
+  }
+
+  &-item {
+    align-items: baseline;
+    color: #484650;
+    display: flex;
+
+    &:not(:first-of-type) {
+      border-top: 1px solid #484650;
+    }
+
+    &__icon {
+      font-size: 16px;
+      margin: 0 16px;
+    }
+
+    &__label {
+      display: inline;
+      font-size: 12px;
+      text-transform: uppercase;
+      width: 100%;
+    }
+  }
+}

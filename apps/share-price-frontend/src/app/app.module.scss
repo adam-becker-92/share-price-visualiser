@@ -1,0 +1,28 @@
+/* Your styles goes here. */
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'header header '
+    'sidebar main ';
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  display: flex;
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
+  padding: 16px;
+}
