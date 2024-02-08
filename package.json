@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "back-end:dev-server": "nx serve share-price-backend",
+    "backend:dev-server": "nx serve share-price-backend",
     "components:storybook": "nx storybook components",
-    "front-end:dev-server": "nx serve share-price-frontend"
+    "frontend:dev-server": "nx serve share-price-frontend"
   },
   "private": true,
   "dependencies": {
