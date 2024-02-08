@@ -43,4 +43,21 @@ const generateMockSharePrices = (): Array<IMockSharePrice> => {
   return returnObject;
 };
 
-export { generateMockSharePrices };
+function generateTimeSeries(price: number) {
+  let priceReference = price;
+  const timeSeries = [];
+  for (let i = 0; i < 14; i++) {
+    const date = new Date();
+    date.setDate(date.getDate() - 1);
+    timeSeries.unshift({
+      price: priceReference,
+      date,
+    });
+
+    priceReference = priceReference + generateRandomNumber(3, true);
+  }
+
+  return timeSeries;
+}
+
+export { generateMockSharePrices, generateTimeSeries };

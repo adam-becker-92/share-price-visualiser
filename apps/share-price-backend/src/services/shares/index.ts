@@ -1,4 +1,7 @@
-import { generateMockSharePrices } from '../../utils/mock-data';
+import {
+  generateMockSharePrices,
+  generateTimeSeries,
+} from '../../utils/mock-data';
 
 let shareService;
 
@@ -18,7 +21,12 @@ class SharesService {
   }
 
   async getShareDetails(id: number) {
-    return this.shares.find(({ id: shareId }) => shareId === id);
+    const data = this.shares.find(({ id: shareId }) => shareId === id);
+    const timeSeries = generateTimeSeries(data.price);
+    return {
+      ...data,
+      timeSeries,
+    };
   }
 }
 
