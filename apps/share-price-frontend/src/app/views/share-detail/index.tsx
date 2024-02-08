@@ -42,6 +42,16 @@ interface IShareTimeSeries {
   data: Array<number>;
 }
 
+interface IRawTimeSeries {
+  price: number;
+  date: string;
+}
+
+interface IFormattedTimeSeries {
+  yAxisLabels: Array<string>;
+  data: Array<number>;
+}
+
 export function ShareDetail() {
   const { ticker } = useParams();
   const [shareData, setShareData] = useState<IShareBreakdown>(
@@ -57,9 +67,8 @@ export function ShareDetail() {
       const { data } = await response.json();
       setShareData(data);
 
-      console.log('________', data);
       const formattedData = data?.timeSeries?.reduce(
-        (returnObj, { price, date }) => {
+        (returnObj: IFormattedTimeSeries, { price, date }: IRawTimeSeries) => {
           return {
             yAxisLabels: returnObj.yAxisLabels.concat(format(date, 'P')),
             data: returnObj.data.concat(price),
@@ -71,7 +80,6 @@ export function ShareDetail() {
         }
       );
 
-      console.log('=-=-=', formattedData);
       setShareTimeSeries(formattedData);
     }
 
