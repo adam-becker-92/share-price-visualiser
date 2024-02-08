@@ -1,7 +1,12 @@
 enum Ticker {
-  APPL = 'Apple',
-  MSFT = 'Microsoft',
-  AMZN = 'Amazon',
+  APPL = 'Apple Inc',
+  MSFT = 'Microsoft Corp',
+  AMZN = 'Amazon.com Inc',
+  GOOG = 'Alphabet Inc Class C',
+  META = 'Meta Platforms Inc',
+  KO = 'Coca-Cola Co',
+  PEP = 'PepsiCo Inc',
+  MCD = "McDonald's Corp",
 }
 
 interface IMockSharePrice {

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "server:dev-server": "nx serve share-price-backend",
+    "back-end:dev-server": "nx serve share-price-backend",
     "components:storybook": "nx storybook components",
     "front-end:dev-server": "nx serve share-price-frontend"
   },
@@ -12,7 +12,9 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "ag-grid-react": "^31.0.3",
     "axios": "^1.6.0",
+    "cors": "^2.8.5",
     "express": "~4.18.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
