@@ -5,9 +5,9 @@ import {
   SideBarComponent,
   TitleComponent,
 } from '@share-price-platform/components';
-import { SharesTable } from './views';
+import { SharesTable, ShareDetail } from './views';
 
-import { faLineChart, faTable } from '@fortawesome/free-solid-svg-icons';
+import { faTable } from '@fortawesome/free-solid-svg-icons';
 
 export function App() {
   const menuItems = [{ label: 'Shares Table', icon: faTable, path: '/' }];
@@ -23,17 +23,7 @@ export function App() {
       <div className={styles['main']}>
         <Routes>
           <Route path="/" element={<SharesTable />} />
-          <Route
-            path="/time-series/:ticker"
-            element={
-              <div>
-                <TitleComponent
-                  title="Shares Time Series"
-                  subTitle="Breakdown of share perfromance over time"
-                />
-              </div>
-            }
-          />
+          <Route path="/time-series/:ticker" element={<ShareDetail />} />
         </Routes>
       </div>
     </div>

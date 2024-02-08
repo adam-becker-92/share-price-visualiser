@@ -1,0 +1,31 @@
+.breakdown {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: #222222;
+  padding: 16px;
+
+  &__name {
+    font-size: 32px;
+    margin: 0 0 16px;
+  }
+
+  &__ticker {
+    color: rgb(45, 52, 118);
+    font-size: 24px;
+    margin: 0 0 16px;
+  }
+
+  &__metrics {
+    display: flex;
+    margin: 0;
+
+    p {
+      margin: 0;
+    }
+
+    p:not(:last-of-type) {
+      margin-right: 32px;
+    }
+  }
+}
